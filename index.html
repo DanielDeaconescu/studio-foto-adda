@@ -80,12 +80,7 @@
     <!-- Header -->
     <header class="header position-relative mt-6 overflow-hidden">
       <img
-        src="images/decoration-star.svg"
-        alt=""
-        class="decoration-star position-absolute"
-      />
-      <img
-        src="images/decoration-star.svg"
+        src="images/photographer.png"
         alt=""
         class="decoration-star-2 position-absolute"
       />
@@ -93,24 +88,52 @@
         <div class="row">
           <div class="col-lg-6">
             <div class="mt-6">
-              <h1 class="xl-text">
-                The <span class="text-primary">Perfect</span> Office Space
-              </h1>
+              <h1 class="xl-text">Studio Foto Adda</h1>
               <p class="lead mb-4">
                 We specialize in transforming office spaces into inspiring and
                 functional environments. Let us bring your vision to life.
               </p>
               <a href="#introduction" class="btn btn-primary btn-lg m-2">
-                More Details
+                Află mai mult
               </a>
               <a href="#contact" class="btn btn-outline-secondary btn-lg m-2">
-                Contact Us
+                Contactați-ne
               </a>
             </div>
           </div>
-          <div class="col-lg-6">
+          <!-- Video -->
+          <div class="col-lg-6 d-flex flex-column align-items-center">
             <div class="image-container">
-              <img src="images/header.png" alt="" class="img-fluid" />
+              <div class="position-relative">
+                <img src="images/header.png" alt="" class="img-fluid" />
+                <a
+                  class="video-btn"
+                  data-bs-toggle="modal"
+                  data-bs-target="#videoModal"
+                  data-bs-src="https://www.youtube.com/embed/PmHo56c8Zq8"
+                >
+                  <span class="video-play-button">
+                    <span></span>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video Modal -->
+      <div class="video-modal">
+        <div class="modal fade" id="videoModal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="ratio ratio-16x9">
+                <iframe
+                  frameborder="0"
+                  class="embed-responsive-item"
+                  id="video"
+                ></iframe>
+              </div>
             </div>
           </div>
         </div>
@@ -118,7 +141,7 @@
     </header>
 
     <!-- Stats -->
-    <section id="stats" class="stats container">
+    <!-- <section id="stats" class="stats container">
       <div class="row my-6">
         <div class="col-md-3 col-sm-6 text-center">
           <h2 class="counter xl-text" data-target="328"></h2>
@@ -140,17 +163,14 @@
           <p>Case Studies</p>
         </div>
       </div>
-    </section>
+    </section> -->
 
-    <!-- Introduction -->
+    <!-- About + Our Values -->
     <section id="introduction" class="intro bg-light py-6">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 offset-lg-2 text-center">
-            <h2>
-              Creating <span class="text-secondary">Inspiring</span> Office
-              Spaces
-            </h2>
+            <h2>Despre Studio Foto Adda</h2>
             <p class="fs-5">
               At our company, designing office spaces is our passion. We take
               pride in our completed projects that reflect our dedication and
@@ -168,7 +188,7 @@
       class="details position-relative my-6 overflow-hidden"
     >
       <img
-        src="images/decoration-star.svg"
+        src="images/photographer.png"
         alt=""
         class="decoration-star position-absolute"
       />
@@ -181,9 +201,7 @@
           </div>
           <div class="col-lg-6">
             <div class="mt-4">
-              <h2 class="mb-4">
-                Create <span class="text-primary">Unique</span> Office Spaces
-              </h2>
+              <h2 class="mb-4">Valorile noastre</h2>
               <ul class="list-unstyled">
                 <li class="d-flex mb-3">
                   <i class="fas fa-check text-primary fa-2x mx-4"></i>
@@ -216,7 +234,7 @@
                   </p>
                 </li>
               </ul>
-              <a href="article.html" class="btn btn-primary">Get Started</a>
+              <a href="article.html" class="btn btn-primary">Contactați-ne</a>
             </div>
           </div>
         </div>
@@ -230,7 +248,7 @@
           <div class="col-lg-5">
             <div class="text-container text-center text-lg-start">
               <h2>
-                <span class="text-secondary">Services</span> that we offer
+                <span class="text-secondary">Serviciile</span> pe care le oferim
               </h2>
               <p>
                 At our company, we provide a wide range of services to meet all
@@ -246,19 +264,19 @@
                 class="col-md-4 d-flex flex-column align-items-center text-center"
               >
                 <i class="fas fa-rocket fa-4x text-secondary mb-2"></i>
-                <p class="fs-5 fw-bold">Space Analysis & Planning</p>
+                <p class="fs-5 fw-bold">Evenimente Speciale</p>
               </div>
               <div
                 class="col-md-4 d-flex flex-column align-items-center text-center"
               >
                 <i class="fas fa-clock fa-4x text-secondary mb-2"></i>
-                <p class="fs-5 fw-bold">Design & Color Choosing</p>
+                <p class="fs-5 fw-bold">Familie și portret</p>
               </div>
               <div
                 class="col-md-4 d-flex flex-column align-items-center text-center"
               >
                 <i class="fas fa-comments fa-4x text-secondary mb-2"></i>
-                <p class="fs-5 fw-bold">Materials & Delivery</p>
+                <p class="fs-5 fw-bold">Profesionale</p>
               </div>
             </div>
             <div class="row">
@@ -266,7 +284,7 @@
                 class="col-md-4 d-flex flex-column align-items-center text-center"
               >
                 <i class="fas fa-tools fa-4x text-secondary mb-2"></i>
-                <p class="fs-5 fw-bold">Execute The Concept</p>
+                <p class="fs-5 fw-bold">Creative</p>
               </div>
               <div
                 class="col-md-4 d-flex flex-column align-items-center text-center"
@@ -278,7 +296,7 @@
                 class="col-md-4 d-flex flex-column align-items-center text-center"
               >
                 <i class="fas fa-chart-bar fa-4x text-secondary mb-2"></i>
-                <p class="fs-5 fw-bold">Evaluation & Reporting</p>
+                <p class="fs-5 fw-bold">Tehnice</p>
               </div>
             </div>
           </div>
@@ -287,7 +305,7 @@
     </section>
 
     <!-- Details 2 -->
-    <section class="details-2 position-relative my-6 overflow-hidden">
+    <!-- <section class="details-2 position-relative my-6 overflow-hidden">
       <img
         src="images/decoration-star.svg"
         alt=""
@@ -319,10 +337,10 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- Get Quote -->
-    <section class="get-quote bg-light py-6 text-center">
+    <section class="get-quote py-6 text-center">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 offset-lg-2">
@@ -339,9 +357,7 @@
     <!-- Projects -->
     <section id="projects" class="projects py-6">
       <div class="container">
-        <h2 class="text-center pb-4">
-          Some Of Our <span class="text-secondary">Projects</span>
-        </h2>
+        <h2 class="text-center pb-4">Proiectele noastre</h2>
         <!-- Projects Row 1 -->
         <div class="row mb-4">
           <div class="col-md-4">
@@ -432,89 +448,95 @@
 
     <!-- Testimonials -->
     <section id="testimonials" class="testimonials bg-light py-6">
-      <div id="testimonialCarousel" class="carousel slide">
-        <div class="carousel-inner">
-          <!-- Slide 1 -->
-          <div class="carousel-item active">
-            <div
-              class="d-flex flex-column justify-content-center align-items-center text-center"
-            >
-              <img
-                src="images/testimonial-1.jpg"
-                alt=""
-                class="rounded-circle"
-                width="120"
-              />
-              <p class="w-50 my-4 fst-italic fs-4 mb-4">
-                “Expense bed any sister depend changer off piqued one. Contented
-                continued any happiness instantly objection yet her allowance.
-                Use correct day new brought tedious. By come this been in. Kept
-                easy or sons my it how about some words here done”
-              </p>
-              <div class="fw-bold fs-5 mt-4">Marlene Visconte</div>
-              <div>General Manager - Scouter</div>
+      <div class="container-fluid">
+        <h2>Ce spun clienții despre serviciile noastre</h2>
+        <div id="testimonialCarousel" class="carousel slide">
+          <div class="carousel-inner">
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+              <div
+                class="d-flex flex-column justify-content-center align-items-center text-center"
+              >
+                <img
+                  src="images/testimonial-1.jpg"
+                  alt=""
+                  class="rounded-circle"
+                  width="120"
+                />
+                <p class="w-50 my-4 fst-italic fs-4 mb-4">
+                  “Expense bed any sister depend changer off piqued one.
+                  Contented continued any happiness instantly objection yet her
+                  allowance. Use correct day new brought tedious. By come this
+                  been in. Kept easy or sons my it how about some words here
+                  done”
+                </p>
+                <div class="fw-bold fs-5 mt-4">Marlene Visconte</div>
+                <div>General Manager - Scouter</div>
+              </div>
             </div>
-          </div>
 
-          <!-- Slide 2 -->
-          <div class="carousel-item">
-            <div
-              class="d-flex flex-column justify-content-center align-items-center text-center"
-            >
-              <img
-                src="images/testimonial-2.jpg"
-                alt=""
-                class="rounded-circle"
-                width="120"
-              />
-              <p class="w-50 my-4 fst-italic fs-4 mb-4">
-                “Expense bed any sister depend changer off piqued one. Contented
-                continued any happiness instantly objection yet her allowance.
-                Use correct day new brought tedious. By come this been in. Kept
-                easy or sons my it how about some words here done”
-              </p>
-              <div class="fw-bold fs-5 mt-4">John Spiker</div>
-              <div>Team Leader - Vanquish</div>
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+              <div
+                class="d-flex flex-column justify-content-center align-items-center text-center"
+              >
+                <img
+                  src="images/testimonial-2.jpg"
+                  alt=""
+                  class="rounded-circle"
+                  width="120"
+                />
+                <p class="w-50 my-4 fst-italic fs-4 mb-4">
+                  “Expense bed any sister depend changer off piqued one.
+                  Contented continued any happiness instantly objection yet her
+                  allowance. Use correct day new brought tedious. By come this
+                  been in. Kept easy or sons my it how about some words here
+                  done”
+                </p>
+                <div class="fw-bold fs-5 mt-4">John Spiker</div>
+                <div>Team Leader - Vanquish</div>
+              </div>
+            </div>
+            <!-- Slide 1 -->
+            <div class="carousel-item">
+              <div
+                class="d-flex flex-column justify-content-center align-items-center text-center"
+              >
+                <img
+                  src="images/testimonial-3.jpg"
+                  alt=""
+                  class="rounded-circle"
+                  width="120"
+                />
+                <p class="w-50 my-4 fst-italic fs-4 mb-4">
+                  “Expense bed any sister depend changer off piqued one.
+                  Contented continued any happiness instantly objection yet her
+                  allowance. Use correct day new brought tedious. By come this
+                  been in. Kept easy or sons my it how about some words here
+                  done”
+                </p>
+                <div class="fw-bold fs-5 mt-4">Stella Virtuoso</div>
+                <div>Design Chief - Bikegirl</div>
+              </div>
             </div>
           </div>
-          <!-- Slide 1 -->
-          <div class="carousel-item">
-            <div
-              class="d-flex flex-column justify-content-center align-items-center text-center"
-            >
-              <img
-                src="images/testimonial-3.jpg"
-                alt=""
-                class="rounded-circle"
-                width="120"
-              />
-              <p class="w-50 my-4 fst-italic fs-4 mb-4">
-                “Expense bed any sister depend changer off piqued one. Contented
-                continued any happiness instantly objection yet her allowance.
-                Use correct day new brought tedious. By come this been in. Kept
-                easy or sons my it how about some words here done”
-              </p>
-              <div class="fw-bold fs-5 mt-4">Stella Virtuoso</div>
-              <div>Design Chief - Bikegirl</div>
-            </div>
-          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#testimonialCarousel"
+            data-bs-slide="prev"
+          >
+            <i class="fas fa-arrow-circle-left fa-3x text-secondary"></i>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#testimonialCarousel"
+            data-bs-slide="next"
+          >
+            <i class="fas fa-arrow-circle-right fa-3x text-secondary"></i>
+          </button>
         </div>
-        <button
-          class="carousel-control-prev"
-          type="button"
-          data-bs-target="#testimonialCarousel"
-          data-bs-slide="prev"
-        >
-          <i class="fas fa-arrow-circle-left fa-3x text-secondary"></i>
-        </button>
-        <button
-          class="carousel-control-next"
-          type="button"
-          data-bs-target="#testimonialCarousel"
-          data-bs-slide="next"
-        >
-          <i class="fas fa-arrow-circle-right fa-3x text-secondary"></i>
-        </button>
       </div>
     </section>
 
@@ -535,7 +557,7 @@
           </div>
           <div class="col-lg-6">
             <div class="text-container">
-              <h2>Contact Us For A Quote</h2>
+              <h2>Contactați-ne pentru o ofertă de preț</h2>
 
               <form>
                 <div class="mb-3">
