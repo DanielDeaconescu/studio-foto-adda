@@ -73,7 +73,7 @@ export default async function handler(req, res) {
     await transporter.sendMail(mailOptions);
 
     // Return success message to the client
-    return res.redirect(302, "thank_you.html");
+    return res.redirect(302, "../thank_you.html");
   } catch (error) {
     console.error("Eroare la transmiterea emailului: ", error);
     return res
