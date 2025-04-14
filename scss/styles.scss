@@ -250,6 +250,20 @@
   background-color: rebeccapurple;
 }
 
+// Styling the form
+
+.modal-footer {
+  justify-content: center;
+}
+
+.send-btn-custom {
+  flex: 1;
+}
+
+.close-btn-custom {
+  flex: 1;
+}
+
 @media (max-width: 992px) {
   .xl-text {
     font-size: 50px;

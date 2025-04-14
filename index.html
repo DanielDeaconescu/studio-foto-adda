@@ -104,11 +104,17 @@
               <a href="#introduction" class="btn btn-primary btn-lg m-2">
                 Află mai mult
               </a>
-              <a href="#contact" class="btn btn-outline-secondary btn-lg m-2">
+              <a
+                href="#contact"
+                class="btn btn-outline-secondary btn-lg m-2"
+                data-bs-toggle="modal"
+                data-bs-target="#studio-foto-modal"
+              >
                 Contactați-ne
               </a>
             </div>
           </div>
+
           <!-- Video -->
           <div class="col-lg-6 d-flex flex-column align-items-center">
             <div class="image-container">
@@ -667,6 +673,141 @@
         </div>
       </div>
     </footer>
+
+    <!-- Contact Form Modal -->
+    <div
+      class="modal fade"
+      id="studio-foto-modal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Studio Foto Adda</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <h3 class="text-center">Solicită o ofertă personalizată</h3>
+            <form
+              id="contactForm"
+              method="POST"
+              action="/api/send-email"
+              class="p-4"
+            >
+              <div class="mb-3">
+                <label for="name" class="form-label">Nume complet</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  placeholder="Ex: Andrei Popescu"
+                  required
+                />
+              </div>
+
+              <div class="mb-3">
+                <label for="email" class="form-label">Adresă de email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Ex: andrei@email.com"
+                  required
+                />
+              </div>
+
+              <div class="mb-3">
+                <label for="phone" class="form-label">Număr de telefon</label>
+                <input
+                  type="tel"
+                  class="form-control"
+                  id="phone"
+                  placeholder="Ex: 07xx xxx xxx"
+                  required
+                />
+              </div>
+
+              <div class="mb-3">
+                <label for="date" class="form-label"
+                  >Data estimativă a evenimentului / ședinței foto</label
+                >
+                <input type="date" class="form-control" id="date" required />
+              </div>
+
+              <div class="mb-3">
+                <label for="location" class="form-label"
+                  >Locația evenimentului (dacă este relevant)</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="location"
+                  placeholder="Ex: Restaurant Royal Galați"
+                />
+              </div>
+
+              <div class="mb-3">
+                <label for="service" class="form-label"
+                  >Ce tip de servicii vă interesează?</label
+                >
+                <select class="form-select" id="service" required>
+                  <option selected disabled value="">Alegeți o opțiune</option>
+                  <option>Fotografii de nuntă</option>
+                  <option>Fotografii de botez</option>
+                  <option>Eveniment privat (majorat, aniversare etc.)</option>
+                  <option>Sesiune foto în studio</option>
+                  <option>Alt tip de eveniment</option>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label for="referral" class="form-label"
+                  >Cum ați aflat de noi?</label
+                >
+                <select class="form-select" id="referral">
+                  <option selected disabled value="">Alegeți o opțiune</option>
+                  <option>Recomandare de la prieteni/familie</option>
+                  <option>Facebook</option>
+                  <option>Instagram</option>
+                  <option>Google</option>
+                  <option>Am văzut site-ul dvs.</option>
+                  <option>Altă sursă</option>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label for="message" class="form-label">Mesaj (opțional)</label>
+                <textarea
+                  class="form-control"
+                  id="message"
+                  rows="4"
+                  placeholder="Spuneți-ne mai multe despre evenimentul dvs."
+                ></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary send-btn-custom">
+              Trimite cererea
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary close-btn-custom"
+              data-bs-dismiss="modal"
+            >
+              Anulează
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <button id="to-top" class="to-top-btn">
       <img src="images/up-arrow.png" alt="" />
