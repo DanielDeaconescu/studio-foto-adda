@@ -55,7 +55,7 @@ export default async function handler(req, res) {
 
     // Email options
     const mailOptions = {
-      from: from: process.env.SMTP_USER, // Sender's email
+      from: process.env.SMTP_USER, // Sender's email
       to: process.env.RECEIVER_EMAIL, // Recipient's email
       subject: `Cerere de la ${name}`, // Subject
       html: `
