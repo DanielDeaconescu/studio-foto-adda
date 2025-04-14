@@ -1,5 +1,7 @@
 :root {
   --red-1: hsl(4, 85%, 59%);
+  --blue-1: hsl(217, 45%, 48%);
+  --purple-1: hsl(338, 52%, 48%);
 }
 
 .logo-link {
@@ -100,6 +102,16 @@
 .header-image {
   max-width: 400px;
   border-radius: 2rem;
+}
+
+.header-h1 {
+  color: var(--blue-1);
+}
+
+.header-p {
+  text-align: justify;
+  color: black;
+  font-weight: 300;
 }
 
 .video-play-button {

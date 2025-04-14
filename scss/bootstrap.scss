@@ -1,9 +1,9 @@
 // Font
-$font-family-sans-serif: 'Open Sans', sans-serif;
+$font-family-sans-serif: "Open Sans", sans-serif;
 
 // Colors
-$primary: #4555d2;
-$secondary: #cc2973;
+$primary: hsl(217, 46%, 48%);
+$secondary: hsl(338, 52%, 48%);
 $dark: #191e47;
 $light: #f9fafe;
 $body-color: #494c52;
@@ -56,4 +56,4 @@ $input-border-radius: $input-radius;
 $input-border-radius-sm: $input-radius;
 $input-border-radius-lg: $input-radius;
 
-@import '../node_modules/bootstrap/scss/bootstrap';
+@import "../node_modules/bootstrap/scss/bootstrap";
