@@ -71,3 +71,22 @@ if (videoModal !== null) {
     video.setAttribute("src", "");
   });
 }
+
+// When the modal is closed, reset the form
+
+const formModal = document.querySelector("#studio-foto-modal");
+const contactForm = document.querySelector("#contactForm");
+
+// When the modal is closed, reset the form
+formModal.addEventListener("hidden.bs.modal", () => {
+  contactForm.reset();
+});
+
+// Form validation
+const fullName = document.querySelector("#name");
+const phone = document.querySelector("#phone");
+const validationErrors = document.querySelectorAll(".validation-error");
+
+contactForm.addEventListener("submit", async function (e) {
+  e.preventDefault();
+});

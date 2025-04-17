@@ -709,8 +709,10 @@
                   id="name"
                   name="name"
                   placeholder="Ex: Andrei Popescu"
-                  required
                 />
+                <div class="mt-1 validation-error display-none">
+                  Câmpul „Nume complet” este obligatoriu!
+                </div>
               </div>
 
               <div class="mb-3">
@@ -721,7 +723,6 @@
                   id="email"
                   name="email"
                   placeholder="Ex: andrei@email.com"
-                  required
                 />
               </div>
 
@@ -732,21 +733,17 @@
                   class="form-control"
                   id="phone"
                   placeholder="Ex: 07xx xxx xxx"
-                  required
                 />
+                <div class="mt-1 validation-error display-none">
+                  Câmpul „Număr de telefon” este obligatoriu!
+                </div>
               </div>
 
               <div class="mb-3">
                 <label for="date" class="form-label"
                   >Data estimativă a evenimentului / ședinței foto</label
                 >
-                <input
-                  type="date"
-                  name="date"
-                  class="form-control"
-                  id="date"
-                  required
-                />
+                <input type="date" name="date" class="form-control" id="date" />
               </div>
 
               <div class="mb-3">
@@ -766,12 +763,7 @@
                 <label for="service" class="form-label"
                   >Ce tip de servicii vă interesează?</label
                 >
-                <select
-                  name="service"
-                  class="form-select"
-                  id="service"
-                  required
-                >
+                <select name="service" class="form-select" id="service">
                   <option selected disabled value="">Alegeți o opțiune</option>
                   <option>Fotografii de nuntă</option>
                   <option>Fotografii de botez</option>
