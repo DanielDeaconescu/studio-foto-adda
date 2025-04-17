@@ -806,19 +806,22 @@
                   placeholder="Spuneți-ne mai multe despre evenimentul dvs."
                 ></textarea>
               </div>
-              <button type="submit" class="btn btn-primary send-btn-custom">
-                Trimite cererea
-              </button>
+              <div class="d-flex gap-3">
+                <button
+                  type="submit"
+                  class="btn btn-primary send-btn-custom flex-1"
+                >
+                  Trimite cererea
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-secondary close-btn-custom flex-1"
+                  data-bs-dismiss="modal"
+                >
+                  Anulează
+                </button>
+              </div>
             </form>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary close-btn-custom"
-              data-bs-dismiss="modal"
-            >
-              Anulează
-            </button>
           </div>
         </div>
       </div>
