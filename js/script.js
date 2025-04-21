@@ -129,7 +129,6 @@ contactForm.addEventListener("submit", async function (e) {
     const result = await response.json();
 
     if (result.success && result.redirectTo) {
-      sessionStorage.setItem("formSubmitted", "true");
       window.location.href = result.redirectTo;
     } else {
       console.log("Form submitted, but no redirect provided.");
@@ -147,24 +146,4 @@ contactForm.addEventListener("submit", async function (e) {
 formModal.addEventListener("hidden.bs.modal", () => {
   const form = formModal.querySelector("#contactForm");
   form.reset();
-});
-
-// Reset modal/form if user came back from thank-you page
-window.addEventListener("DOMContentLoaded", () => {
-  if (sessionStorage.getItem("formSubmitted") === "true") {
-    sessionStorage.removeItem("formSubmitted");
-
-    // Hide the modal
-    const modalInstance =
-      bootstrap.Modal.getInstance(formModal) || new bootstrap.Modal(formModal);
-    modalInstance.hide();
-
-    // Reset form
-    contactForm.reset();
-
-    // Reset loading state
-    submitButton.disabled = false;
-    loadingSpinner.classList.add("d-none");
-    buttonText.textContent = "Trimite cererea";
-  }
 });
