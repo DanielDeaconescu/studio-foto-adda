@@ -104,10 +104,14 @@ contactForm.addEventListener("submit", async function (e) {
   // Send data via fetch
   try {
     const formData = new FormData(contactForm);
+    const encodedData = new URLSearchParams(formData);
 
     const response = await fetch("/api/send-email", {
       method: "POST",
-      body: formData,
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: encodedData.toString(),
     });
 
     if (!response.ok) throw new Error("Failed to send email");
