@@ -72,21 +72,52 @@ if (videoModal !== null) {
   });
 }
 
-// When the modal is closed, reset the form
+// When the modal is closed, reset the form + Form Validation
 
 const formModal = document.querySelector("#studio-foto-modal");
 const contactForm = document.querySelector("#contactForm");
-
-// When the modal is closed, reset the form
-formModal.addEventListener("hidden.bs.modal", () => {
-  contactForm.reset();
-});
-
-// Form validation
 const fullName = document.querySelector("#name");
 const phone = document.querySelector("#phone");
 const validationErrors = document.querySelectorAll(".validation-error");
 
 contactForm.addEventListener("submit", async function (e) {
   e.preventDefault();
+
+  // Clear old validation errors
+  validationErrors.forEach((el) => el.classList.add("display-none"));
+
+  // Basic validation
+  let isValid = true;
+
+  if (fullName.value === "") {
+    validationErrors[0].classList.remove("display-none");
+    isValid = false;
+  }
+
+  if (phone.value === "") {
+    validationErrors[1].classList.remove("display-none");
+    isValid = false;
+  }
+
+  if (!isValid) return;
+
+  // Send data via fetch
+  try {
+    const formData = new FormData(contactForm);
+
+    const response = await fetch("/api/send-email", {
+      method: "POST",
+      body: formData,
+    });
+
+    if (!response.ok) throw new Error("Failed to send email");
+
+    const result = await response.json();
+    console.log("Success: ", result);
+
+    // Reset form & maybe show a success message
+    contactForm.reset();
+  } catch (err) {
+    console.error("Error submitting form: ", err);
+  }
 });
