@@ -116,11 +116,14 @@ contactForm.addEventListener("submit", async function (e) {
 
     if (!response.ok) throw new Error("Failed to send email");
 
+    // Redirect to the thank-you page
     const result = await response.json();
-    console.log("Success: ", result);
 
-    // Reset form & maybe show a success message
-    contactForm.reset();
+    if (result.success && result.redirectTo) {
+      window.location.href = result.redirectTo;
+    } else {
+      console.log("Form submitted, but no redirect provided.");
+    }
   } catch (err) {
     console.error("Error submitting form: ", err);
   }
