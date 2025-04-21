@@ -197,3 +197,10 @@ buttons.forEach((button) => {
 
 // Default to show wedding photos
 document.querySelector('[data-category="wedding"]').click();
+
+// Lightbox options
+// lightbox.option({
+//   resizeDuration: 200,
+//   wrapAround: true,
+//   albumLabel: false,
+// });
