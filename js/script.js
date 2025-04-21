@@ -125,3 +125,8 @@ contactForm.addEventListener("submit", async function (e) {
     console.error("Error submitting form: ", err);
   }
 });
+
+formModal.addEventListener("hidden.bs.modal", () => {
+  const form = formModal.querySelector("#contactForm");
+  form.reset();
+});
