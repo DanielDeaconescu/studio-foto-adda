@@ -802,9 +802,16 @@
               <div class="d-flex gap-3">
                 <button
                   type="submit"
-                  class="btn btn-primary send-btn-custom flex-1"
+                  class="btn btn-primary d-flex align-items-center send-btn-custom flex-1"
+                  id="submitButton"
                 >
-                  Trimite cererea
+                  <span class="button-text">Trimite cererea</span>
+                  <div
+                    class="spinner-border spinner-border-sm ms-2 d-none"
+                    role="status"
+                    id="loadingSpinner"
+                    aria-hidden="true"
+                  ></div>
                 </button>
                 <button
                   type="button"

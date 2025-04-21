@@ -80,6 +80,10 @@ const fullName = document.querySelector("#name");
 const phone = document.querySelector("#phone");
 const validationErrors = document.querySelectorAll(".validation-error");
 
+const submitButton = document.querySelector("#submitButton");
+const loadingSpinner = document.querySelector("#loadingSpinner");
+const buttonText = submitButton.querySelector(".button-text");
+
 contactForm.addEventListener("submit", async function (e) {
   e.preventDefault();
 
@@ -100,6 +104,11 @@ contactForm.addEventListener("submit", async function (e) {
   }
 
   if (!isValid) return;
+
+  // Activate loading state
+  submitButton.disabled = true;
+  loadingSpinner.classList.remove("d-none");
+  buttonText.textContent = "Se trimite...";
 
   // Send data via fetch
   try {
