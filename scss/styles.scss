@@ -88,14 +88,9 @@
   font-size: 0.9rem;
 }
 
-.header .decoration-star {
-  top: 80px;
-  left: -200px;
-  width: 500px;
-  opacity: 0.7;
-}
+// Styling the Header start
 
-.header .decoration-star-2 {
+.header .photographer-decoration-1 {
   top: 80px;
   right: -200px;
   width: 500px;
@@ -116,6 +111,30 @@
   color: black;
   font-weight: 300;
 }
+
+// Styling the Header end
+
+// Styling About start
+#about-our-values .photographer-decoration-2 {
+  top: 80px;
+  left: -200px;
+  width: 500px;
+  opacity: 0.7;
+}
+
+.about-paragraph {
+  text-align: justify;
+}
+
+.our-values-paragraph {
+  text-align: justify;
+}
+
+.our-values-image {
+  border-radius: 2rem;
+  max-height: 750px;
+}
+// Styling About end
 
 // Video Play Button
 
@@ -250,7 +269,7 @@
   background-color: rebeccapurple;
 }
 
-// Styling the form
+// Styling the form start
 
 .modal-footer {
   justify-content: center;
@@ -278,6 +297,8 @@
   opacity: 0.7;
   pointer-events: none;
 }
+
+// Styling the form end
 
 @media (max-width: 992px) {
   .xl-text {
