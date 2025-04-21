@@ -129,7 +129,22 @@ contactForm.addEventListener("submit", async function (e) {
     const result = await response.json();
 
     if (result.success && result.redirectTo) {
-      window.location.href = result.redirectTo;
+      // 🧼 CLEAN EVERYTHING BEFORE REDIRECT
+      contactForm.reset();
+      submitButton.disabled = false;
+      loadingSpinner.classList.add("d-none");
+      buttonText.textContent = "Trimite cererea";
+
+      // Close the modal
+      const modalInstance =
+        bootstrap.Modal.getInstance(formModal) ||
+        new bootstrap.Modal(formModal);
+      modalInstance.hide();
+
+      // Let the modal fully close, then redirect
+      setTimeout(() => {
+        window.location.href = result.redirectTo;
+      }, 300); // adjust this delay if needed
     } else {
       console.log("Form submitted, but no redirect provided.");
     }
