@@ -140,44 +140,11 @@ contactForm.addEventListener("submit", async function (e) {
     // Reset loading state
     submitButton.disabled = false;
     loadingSpinner.classList.add("d-none");
-    buttonText.textContent = "Trimite";
+    buttonText.textContent = "Trimite cererea";
   }
 });
 
 formModal.addEventListener("hidden.bs.modal", () => {
   const form = formModal.querySelector("#contactForm");
   form.reset();
-});
-
-window.addEventListener("DOMContentLoaded", () => {
-  if (sessionStorage.getItem("formSubmitted") === "true") {
-    // Close the modal
-    const formModal = document.querySelector("#studio-foto-modal");
-    if (formModal) {
-      formModal.classList.remove("show");
-      formModal.setAttribute("aria-hidden", "true");
-      formModal.style.display = "none";
-      document.body.classList.remove("modal-open");
-      const backdrop = document.querySelector(".modal-backdrop");
-      if (backdrop) backdrop.remove();
-    }
-
-    // Reset the form
-    const contactForm = document.querySelector("#contactForm");
-    if (contactForm) contactForm.reset();
-
-    // Reset the loading spinner (just in case)
-    const submitButton = document.querySelector("#submitButton");
-    const loadingSpinner = document.querySelector("#loadingSpinner");
-    const buttonText = document.querySelector("#submitButton .button-text");
-
-    if (submitButton && loadingSpinner && buttonText) {
-      submitButton.disabled = false;
-      loadingSpinner.classList.add("d-none");
-      buttonText.textContent = "Trimite";
-    }
-
-    // Clean the flag
-    sessionStorage.removeItem("formSubmitted");
-  }
 });
