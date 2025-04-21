@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/font-awesome.css" />
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="icon" href="images/favicon.png" />
+    <!-- favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./images/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./images/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
+    <title>Studio Foto Adda | Portofoliu</title>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg sticky-top navbar-light navbar-custom">
+      <div class="container">
+        <a class="navbar-brand logo-link" href="#">
+          <img src="images/logo.svg" alt="Logo Studio Foto Adda" width="50" />
+          <div class="d-flex flex-column">
+            <span class="logo-text"> Studio Foto Adda </span>
+            <small class="logo-subtext">Servicii Foto Profesionale</small>
+          </div>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="index.html"
+                >Acasă</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="services.html">Servicii</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="portfolio.html">Portofoliu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container my-5">
+      <h1 class="text-center">Portofoliu - Studio Foto Adda</h1>
+
+      <p class="lead text-center mb-5">
+        La Studio Foto Adda, capturăm momentele speciale din viața clienților
+        noștri cu pasiune și profesionalism. În galeria de mai jos, veți găsi
+        câteva dintre cele mai importante evenimente pe care am avut plăcerea să
+        le surprindem: nunți, botezuri, sărbători de Crăciun și multe altele.
+        Descoperiți diversitatea serviciilor noastre și imaginați-vă cum am
+        putea să transformăm evenimentul vostru în amintiri de neuitat.
+      </p>
+    </div>
+
+    <!-- Category Buttons -->
+    <div class="d-flex justify-content-center mb-4">
+      <button class="btn btn-primary me-2" data-category="wedding">
+        Nunți
+      </button>
+      <button class="btn btn-primary me-2" data-category="baptism">
+        Botezuri
+      </button>
+      <button class="btn btn-primary me-2" data-category="school-photos">
+        Fotografii școlare
+      </button>
+      <button class="btn btn-primary me-2" data-category="christmas">
+        Fotografii de Crăciun
+      </button>
+      <button class="btn btn-primary me-2" data-category="christmas">
+        Fotografii de Paște
+      </button>
+    </div>
+    <div class="container">
+      <div class="row" id="portfolio">
+        <!-- Wedding Photos -->
+        <!-- <div class="col-md-4 photo-item" data-category="wedding">
+          <img
+            src="./images/nunti/nunta_p_1.jpg"
+            alt="Wedding Photo 1"
+            class="img-fluid"
+          />
+        </div> -->
+        <!-- Wedding Photos Portrait -->
+        <div class="col-md-4 photo-item" data-category="wedding">
+          <img
+            src="./images/nunti/nunta_p_2.jpg"
+            alt="Wedding Photo 2"
+            class="img-fluid"
+          />
+        </div>
+        <div class="col-md-4 photo-item" data-category="wedding">
+          <img
+            src="./images/nunti/nunta_p_3.jpg"
+            alt="Wedding Photo 3"
+            class="img-fluid"
+          />
+        </div>
+        <div class="col-md-4 photo-item" data-category="wedding">
+          <img
+            src="./images/nunti/nunta_p_4.jpg"
+            alt="Wedding Photo 4"
+            class="img-fluid"
+          />
+        </div>
+        <div class="col-md-4 photo-item" data-category="wedding">
+          <img
+            src="./images/nunti/nunta_p_5.jpg"
+            alt="Wedding Photo 5"
+            class="img-fluid"
+          />
+        </div>
+        <div class="col-md-4 photo-item mt-2" data-category="wedding">
+          <img
+            src="./images/nunti/nunta_p_6.jpg"
+            alt="Wedding Photo 6"
+            class="img-fluid"
+          />
+        </div>
+        <div class="col-md-4 photo-item" data-category="wedding">
+          <img
+            src="./images/nunti/nunta_p_7.jpg"
+            alt="Wedding Photo 7"
+            class="img-fluid"
+          />
+        </div>
+        <div class="col-md-4 photo-item" data-category="wedding">
+          <img
+            src="./images/nunti/nunta_p_8.jpg"
+            alt="Wedding Photo 8"
+            class="img-fluid"
+          />
+        </div>
+        <div class="col-md-4 photo-item mt-2" data-category="wedding">
+          <img
+            src="./images/nunti/nunta_p_9.jpg"
+            alt="Wedding Photo 9"
+            class="img-fluid"
+          />
+        </div>
+        <div class="col-md-4 photo-item mt-2" data-category="wedding">
+          <img
+            src="./images/nunti/nunta_p_10.jpg"
+            alt="Wedding Photo 10"
+            class="img-fluid"
+          />
+        </div>
+
+        <!-- Wedding Photos Landscape -->
+        <div class="col-md-4 photo-item mt-2" data-category="wedding">
+          <img
+            src="./images/nunti/nunta_l_1.jpg"
+            alt="Wedding Photo 11"
+            class="img-fluid"
+          />
+        </div>
+
+        <div class="col-md-4 photo-item mt-2" data-category="wedding">
+          <img
+            src="./images/nunti/nunta_l_2.jpg"
+            alt="Wedding Photo 11"
+            class="img-fluid"
+          />
+        </div>
+
+        <div class="col-md-4 photo-item mt-2" data-category="wedding">
+          <img
+            src="./images/nunti/nunta_l_3.jpg"
+            alt="Wedding Photo 11"
+            class="img-fluid"
+          />
+        </div>
+
+        <div class="col-md-4 photo-item mt-2" data-category="wedding">
+          <img
+            src="./images/nunti/nunta_l_4.jpg"
+            alt="Wedding Photo 11"
+            class="img-fluid"
+          />
+        </div>
+
+        <div class="col-md-4 photo-item mt-2" data-category="wedding">
+          <img
+            src="./images/nunti/nunta_l_5.jpg"
+            alt="Wedding Photo 11"
+            class="img-fluid"
+          />
+        </div>
+
+        <div class="col-md-4 photo-item mt-2" data-category="wedding">
+          <img
+            src="./images/nunti/nunta_l_6.jpg"
+            alt="Wedding Photo 11"
+            class="img-fluid"
+          />
+        </div>
+
+        <div class="col-md-4 photo-item mt-2" data-category="wedding">
+          <img
+            src="./images/nunti/nunta_l_7.jpg"
+            alt="Wedding Photo 11"
+            class="img-fluid"
+          />
+        </div>
+
+        <div class="col-md-4 photo-item mt-2" data-category="wedding">
+          <img
+            src="./images/nunti/nunta_l_8.jpg"
+            alt="Wedding Photo 11"
+            class="img-fluid"
+          />
+        </div>
+
+        <div class="col-md-4 photo-item mt-2" data-category="wedding">
+          <img
+            src="./images/nunti/nunta_l_9.jpg"
+            alt="Wedding Photo 11"
+            class="img-fluid"
+          />
+        </div>
+
+        <div class="col-md-4 photo-item mt-2" data-category="wedding">
+          <img
+            src="./images/nunti/nunta_l_10.jpg"
+            alt="Wedding Photo 11"
+            class="img-fluid"
+          />
+        </div>
+
+        <div class="col-md-4 photo-item mt-2" data-category="wedding">
+          <img
+            src="./images/nunti/nunta_l_11.jpg"
+            alt="Wedding Photo 11"
+            class="img-fluid"
+          />
+        </div>
+
+        <!-- Baptism Photos -->
+        <div class="col-md-4 photo-item" data-category="baptism">
+          <img src="baptism1.jpg" alt="Baptism Photo 1" class="img-fluid" />
+        </div>
+        <div class="col-md-4 photo-item" data-category="baptism">
+          <img src="baptism2.jpg" alt="Baptism Photo 2" class="img-fluid" />
+        </div>
+
+        <!-- Christmas Photos -->
+        <div class="col-md-4 photo-item" data-category="christmas">
+          <img src="christmas1.jpg" alt="Christmas Photo 1" class="img-fluid" />
+        </div>
+        <div class="col-md-4 photo-item" data-category="christmas">
+          <img src="christmas2.jpg" alt="Christmas Photo 2" class="img-fluid" />
+        </div>
+      </div>
+    </div>
+
+    <button id="to-top" class="to-top-btn">
+      <img src="images/up-arrow.png" alt="" />
+    </button>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
