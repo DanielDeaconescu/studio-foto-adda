@@ -34,12 +34,12 @@ export default async function handler(req, res) {
     // Parse form data manually (since Vercel doesn't parse it automatically)
     const parsedData = await parseFormData(req);
 
-    const { name, email, date, location, service, message } = parsedData;
+    const { name, email, date, location, service, message, phone } = parsedData;
 
-    if (!name || !email || !date || !location || !service || !message) {
+    if (!name || !phone) {
       return res
         .status(400)
-        .json({ message: "Toate câmpurile sunt obligatorii!" });
+        .json({ message: "Numele și numărul de telefon sunt obligatorii!" });
     }
 
     // Create transporter for nodemailer
