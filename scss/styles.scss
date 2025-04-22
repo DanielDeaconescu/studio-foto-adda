@@ -410,6 +410,14 @@
 
 // Styling the services page end
 
+// Styling the contact page start
+
+.toast {
+  z-index: 1050; /* Asigură-te că toast-ul apare deasupra altor elemente */
+}
+
+// Styling the contact page end
+
 @media (max-width: 992px) {
   .xl-text {
     font-size: 50px;

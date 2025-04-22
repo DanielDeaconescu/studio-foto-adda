@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   --red-1: hsl(4, 85%, 59%);
   --blue-1: hsl(217, 45%, 48%);
@@ -363,6 +364,10 @@
 
 .call-to-action-services {
   background-color: #fdf5e6;
+}
+
+.toast {
+  z-index: 1050; /* Asigură-te că toast-ul apare deasupra altor elemente */
 }
 
 @media (max-width: 992px) {

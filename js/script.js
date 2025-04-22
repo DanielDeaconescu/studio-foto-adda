@@ -185,3 +185,26 @@ document.querySelector('[data-category="wedding"]').click();
 //   wrapAround: true,
 //   albumLabel: false,
 // });
+
+// contact page - copy button
+function copyToClipboard() {
+  const addressText = document.getElementById("addressLink").textContent;
+
+  // Using Clipboard API to copy text to clipboard
+  navigator.clipboard
+    .writeText(addressText)
+    .then(function () {
+      // Create the toast with a faster hide time (e.g., 2000ms = 2 seconds)
+      var toast = new bootstrap.Toast(
+        document.getElementById("toastNotification"),
+        {
+          delay: 1000, // Adjust the delay time (in milliseconds)
+        }
+      );
+      toast.show();
+    })
+    .catch(function (err) {
+      console.error("Error copying text: ", err);
+      // Optional: Display an error toast here
+    });
+}
