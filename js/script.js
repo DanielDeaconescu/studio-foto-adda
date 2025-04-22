@@ -145,7 +145,7 @@ if (contactForm) {
         // Let the modal fully close, then redirect
         setTimeout(() => {
           window.location.href = result.redirectTo;
-        }, 300); // adjust this delay if needed
+        }, 1000); // adjust this delay if needed
       } else {
         console.log("Form submitted, but no redirect provided.");
       }
