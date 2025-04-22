@@ -200,6 +200,14 @@
   cursor: pointer;
 }
 
+.container-thank-you {
+  height: 100vh;
+}
+
+.logo-thank-you-page {
+  width: 100px;
+}
+
 .video-play-button {
   position: absolute;
   z-index: 10;
