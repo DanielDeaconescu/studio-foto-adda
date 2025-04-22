@@ -448,57 +448,160 @@
     <!-- Contact -->
     <section id="contact" class="contact my-6 position-relative">
       <img
-        src="images/decoration-star.svg"
+        src="images/photographer.png"
         alt=""
-        class="decoration-star position-absolute"
+        class="photographer-decoration-3 position-absolute"
       />
-
+      <h2 class="text-center mb-5">Contactați-ne pentru o ofertă de preț</h2>
       <div class="container position-relative z-3">
         <div class="row">
-          <div class="col-lg-6 d-none d-md-block">
+          <div class="col-lg-6 d-none d-md-flex justify-content-center">
             <div class="image-container">
-              <img src="images/contact.png" alt="" class="img-fluid" />
+              <img
+                src="images/contact-image.jpg"
+                alt=""
+                class="img-fluid contact-image"
+              />
             </div>
           </div>
           <div class="col-lg-6">
             <div class="text-container">
-              <h2>Contactați-ne pentru o ofertă de preț</h2>
-
-              <form>
+              <form
+                id="contactForm"
+                method="POST"
+                action="/api/send-email"
+                class="p-4"
+              >
                 <div class="mb-3">
+                  <label for="name" class="form-label">Nume complet</label>
                   <input
                     type="text"
                     class="form-control"
-                    placeholder="Enter name"
+                    id="name"
+                    name="name"
+                    placeholder="Ex: Andrei Popescu"
                   />
+                  <div class="mt-1 validation-error display-none">
+                    Câmpul „Nume complet” este obligatoriu!
+                  </div>
                 </div>
+
                 <div class="mb-3">
+                  <label for="email" class="form-label">Adresă de email</label>
                   <input
                     type="email"
                     class="form-control"
-                    placeholder="Enter email"
+                    id="email"
+                    name="email"
+                    placeholder="Ex: andrei@email.com"
                   />
                 </div>
+
                 <div class="mb-3">
+                  <label for="phone" class="form-label">Număr de telefon</label>
+                  <input
+                    type="tel"
+                    class="form-control"
+                    id="phone"
+                    name="phone"
+                    placeholder="Ex: 07xx xxx xxx"
+                  />
+                  <div class="mt-1 validation-error display-none">
+                    Câmpul „Număr de telefon” este obligatoriu!
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="date" class="form-label"
+                    >Data estimativă a evenimentului / ședinței foto</label
+                  >
+                  <input
+                    type="date"
+                    name="date"
+                    class="form-control"
+                    id="date"
+                  />
+                </div>
+
+                <div class="mb-3">
+                  <label for="location" class="form-label"
+                    >Locația evenimentului (dacă este relevant)</label
+                  >
                   <input
                     type="text"
                     class="form-control"
-                    placeholder="Enter phone"
+                    name="location"
+                    id="location"
+                    placeholder="Ex: Restaurant Royal Galați"
                   />
                 </div>
+
                 <div class="mb-3">
+                  <label for="service" class="form-label"
+                    >Ce tip de servicii vă interesează?</label
+                  >
+                  <select name="service" class="form-select" id="service">
+                    <option selected disabled value="">
+                      Alegeți o opțiune
+                    </option>
+                    <option>Fotografii de nuntă</option>
+                    <option>Fotografii de botez</option>
+                    <option>Eveniment privat (majorat, aniversare etc.)</option>
+                    <option>Sesiune foto în studio</option>
+                    <option>Alt tip de eveniment</option>
+                  </select>
+                </div>
+
+                <div class="mb-3">
+                  <label for="referral" class="form-label"
+                    >Cum ați aflat de noi?</label
+                  >
+                  <select class="form-select" id="referral">
+                    <option selected disabled value="">
+                      Alegeți o opțiune
+                    </option>
+                    <option>Recomandare de la prieteni/familie</option>
+                    <option>Facebook</option>
+                    <option>Instagram</option>
+                    <option>Google</option>
+                    <option>Am văzut site-ul dvs.</option>
+                    <option>Altă sursă</option>
+                  </select>
+                </div>
+
+                <div class="mb-3">
+                  <label for="message" class="form-label"
+                    >Mesaj (opțional)</label
+                  >
                   <textarea
                     class="form-control"
-                    placeholder="Enter message"
-                    rows="8"
+                    id="message"
+                    rows="4"
+                    name="message"
+                    placeholder="Spuneți-ne mai multe despre evenimentul dvs."
                   ></textarea>
                 </div>
-                <div class="d-grid gap-2">
-                  <input
+                <div class="d-flex gap-3">
+                  <button
                     type="submit"
-                    value="Send"
-                    class="btn btn-primary btn-block"
-                  />
+                    class="btn btn-primary d-flex align-items-center justify-content-center send-btn-custom flex-1"
+                    id="submitButton"
+                  >
+                    <span class="button-text">Trimite cererea</span>
+                    <div
+                      class="spinner-border spinner-border-sm ms-2 d-none"
+                      role="status"
+                      id="loadingSpinner"
+                      aria-hidden="true"
+                    ></div>
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-secondary close-btn-custom flex-1"
+                    data-bs-dismiss="modal"
+                  >
+                    Anulează
+                  </button>
                 </div>
               </form>
             </div>
