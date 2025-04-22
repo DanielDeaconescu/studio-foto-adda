@@ -73,25 +73,22 @@ if (videoModal !== null) {
 
 // When the modal is closed, reset the form + Form Validation
 
-const formModal = document.querySelector("#studio-foto-modal");
-const contactForm = document.querySelector("#contactForm");
-const fullName = document.querySelector("#name");
-const phone = document.querySelector("#phone");
-const validationErrors = document.querySelectorAll(".validation-error");
+const contactForms = document.querySelectorAll("#contactForm");
 
-const submitButton = document.querySelector("#submitButton");
-const loadingSpinner = document.querySelector("#loadingSpinner");
-
-const buttonText = submitButton.querySelector(".button-text");
-
-if (contactForm) {
-  contactForm.addEventListener("submit", async function (e) {
+contactForms.forEach((form) => {
+  form.addEventListener("submit", async function (e) {
     e.preventDefault();
+
+    const submitButton = form.querySelector("#submitButton");
+    const loadingSpinner = form.querySelector("#loadingSpinner");
+    const buttonText = submitButton.querySelector(".button-text");
+    const validationErrors = form.querySelectorAll(".validation-error");
+    const fullName = form.querySelector("#name");
+    const phone = form.querySelector("#phone");
 
     // Clear old validation errors
     validationErrors.forEach((el) => el.classList.add("display-none"));
 
-    // Basic validation
     let isValid = true;
 
     if (fullName.value === "") {
@@ -106,14 +103,12 @@ if (contactForm) {
 
     if (!isValid) return;
 
-    // Activate loading state
     submitButton.disabled = true;
     loadingSpinner.classList.remove("d-none");
     buttonText.textContent = "Se trimite...";
 
-    // Send data via fetch
     try {
-      const formData = new FormData(contactForm);
+      const formData = new FormData(form);
       const encodedData = new URLSearchParams(formData);
 
       const response = await fetch("/api/send-email", {
@@ -126,46 +121,36 @@ if (contactForm) {
 
       if (!response.ok) throw new Error("Failed to send email");
 
-      // Redirect to the thank-you page
       const result = await response.json();
 
       if (result.success && result.redirectTo) {
-        // 🧼 CLEAN EVERYTHING BEFORE REDIRECT
-        contactForm.reset();
+        form.reset();
         submitButton.disabled = false;
         loadingSpinner.classList.add("d-none");
         buttonText.textContent = "Trimite cererea";
 
-        // Close the modal
-        const modalInstance =
-          bootstrap.Modal.getInstance(formModal) ||
-          new bootstrap.Modal(formModal);
-        modalInstance.hide();
+        const modal = form.closest(".modal");
+        if (modal) {
+          const modalInstance =
+            bootstrap.Modal.getInstance(modal) || new bootstrap.Modal(modal);
+          modalInstance.hide();
 
-        // Let the modal fully close, then redirect
-        setTimeout(() => {
+          setTimeout(() => {
+            window.location.href = result.redirectTo;
+          }, 1000);
+        } else {
+          // if it's not in a modal, redirect immediately
           window.location.href = result.redirectTo;
-        }, 1000); // adjust this delay if needed
-      } else {
-        console.log("Form submitted, but no redirect provided.");
+        }
       }
     } catch (err) {
       console.error("Error submitting form: ", err);
-
-      // Reset loading state
       submitButton.disabled = false;
       loadingSpinner.classList.add("d-none");
       buttonText.textContent = "Trimite cererea";
     }
   });
-}
-
-if (formModal) {
-  formModal.addEventListener("hidden.bs.modal", () => {
-    const form = formModal.querySelector("#contactForm");
-    form.reset();
-  });
-}
+});
 
 // Portfolio implementation
 
