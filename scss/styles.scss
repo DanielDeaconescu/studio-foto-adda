@@ -2,6 +2,9 @@
   --red-1: hsl(4, 85%, 59%);
   --blue-1: hsl(217, 45%, 48%);
   --purple-1: hsl(338, 52%, 48%);
+  --facebook-logo: #1877f2;
+  --instagram-logo: #fd1d1d;
+  --whatsapp-logo: #075e54;
 }
 
 .logo-link {
@@ -136,6 +139,32 @@
 }
 // Styling About end
 
+// Styling Call To Action start
+
+.icons-container a {
+  text-decoration: none;
+  color: white;
+}
+
+.icons-container a:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.fa-facebook {
+  color: var(--facebook-logo);
+}
+
+.fa-instagram {
+  color: var(--instagram-logo);
+}
+
+.fa-whatsapp {
+  color: var(--whatsapp-logo);
+}
+
+// Styling Call To Action end
+
 // Video Play Button
 
 .video-play-button {
@@ -266,7 +295,7 @@
 }
 
 .get-quote {
-  background-color: rebeccapurple;
+  background-color: lightgray;
 }
 
 // Styling the form start
