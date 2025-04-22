@@ -75,7 +75,7 @@ export default async function handler(req, res) {
     // Return success message to the client
     return res
       .status(200)
-      .json({ success: true, redirectTo: "/thank_you.html" });
+      .json({ success: true, redirectTo: "../thank_you.html" });
   } catch (error) {
     console.error("Eroare la transmiterea emailului: ", error);
     return res
