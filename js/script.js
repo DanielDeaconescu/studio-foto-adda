@@ -1,13 +1,10 @@
 function userScroll() {
-  const navbar = document.querySelector(".navbar");
   const toTopBtn = document.querySelector("#to-top");
 
   window.addEventListener("scroll", () => {
     if (window.scrollY > 50) {
-      navbar.classList.add("navbar-sticky");
       toTopBtn.classList.add("show");
     } else {
-      navbar.classList.remove("navbar-sticky");
       toTopBtn.classList.remove("show");
     }
   });
@@ -84,9 +81,8 @@ const validationErrors = document.querySelectorAll(".validation-error");
 
 const submitButton = document.querySelector("#submitButton");
 const loadingSpinner = document.querySelector("#loadingSpinner");
-if (submitButton) {
-  const buttonText = submitButton.querySelector(".button-text");
-}
+
+const buttonText = submitButton.querySelector(".button-text");
 
 if (contactForm) {
   contactForm.addEventListener("submit", async function (e) {

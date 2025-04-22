@@ -45,7 +45,9 @@
   </head>
   <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg sticky-top navbar-light navbar-custom">
+    <nav
+      class="navbar navbar-expand-lg navbar-sticky sticky-top navbar-light navbar-custom"
+    >
       <div class="container">
         <a class="navbar-brand logo-link" href="#">
           <img src="images/logo.svg" alt="Logo Studio Foto Adda" width="50" />
@@ -833,8 +835,29 @@
     </div>
 
     <button id="to-top" class="to-top-btn">
-      <img src="images/up-arrow.png" alt="" />
+      <i class="fa-solid fa-arrow-up text-white"></i>
     </button>
+
+    <!-- Side buttons -->
+    <div
+      class="d-flex justify-content-center align-items-center flex-column side-buttons gap-2"
+    >
+      <a
+        href="https://wa.me/400750419349"
+        target="_blank"
+        class="side-buttons-whatsapp text-decoration-none"
+      >
+        <i class="fab fa-whatsapp fa-2x text-white"></i>
+      </a>
+
+      <a
+        class="side-buttons-form text-decoration-none"
+        data-bs-toggle="modal"
+        data-bs-target="#studio-foto-modal"
+      >
+        <i class="fas fa-envelope fa-2x text-white"></i>
+      </a>
+    </div>
 
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>

@@ -5,6 +5,7 @@
   --facebook-logo: #1877f2;
   --instagram-logo: #fd1d1d;
   --whatsapp-logo: #075e54;
+  --green-adda-logo: hsl(127, 42%, 47%);
 }
 
 .logo-link {
@@ -172,6 +173,33 @@
   text-align: justify;
 }
 
+.side-buttons {
+  position: fixed;
+  right: 20px;
+  bottom: 35%;
+  z-index: 10;
+}
+
+.side-buttons-whatsapp {
+  background-color: var(--whatsapp-logo);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.side-buttons-form {
+  background-color: var(--purple-1);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
 .video-play-button {
   position: absolute;
   z-index: 10;
@@ -266,7 +294,7 @@
 .to-top-btn {
   position: fixed;
   z-index: 20;
-  bottom: 20px;
+  bottom: 50px;
   right: 20px;
   opacity: 0;
   width: 52px;
@@ -274,13 +302,13 @@
   border: none;
   border-radius: 50%;
   outline: none;
-  background-color: #44434a;
+  background-color: var(--blue-1);
   cursor: pointer;
   transition: all 0.5s ease-in-out;
 }
 
 .to-top-btn:hover {
-  background-color: #1d1d21;
+  background-color: var(--blue-1);
 }
 
 .to-top-btn img {
