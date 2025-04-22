@@ -177,7 +177,9 @@ buttons.forEach((button) => {
 });
 
 // Default to show wedding photos
-document.querySelector('[data-category="wedding"]').click();
+if (document.querySelector('[data-category="wedding"]')) {
+  document.querySelector('[data-category="wedding"]').click();
+}
 
 // Lightbox options
 // lightbox.option({
@@ -208,3 +210,15 @@ function copyToClipboard() {
       // Optional: Display an error toast here
     });
 }
+
+// cookies logic
+
+if (!localStorage.getItem("cookieConsent")) {
+  document.getElementById("cookie-popup").classList.remove("d-none");
+}
+
+// Handle acceptance
+document.getElementById("cookie-accept").addEventListener("click", function () {
+  localStorage.setItem("cookieConsent", "true");
+  document.getElementById("cookie-popup").classList.add("d-none");
+});
