@@ -45,7 +45,9 @@
   </head>
   <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg sticky-top navbar-light navbar-custom">
+    <nav
+      class="navbar navbar-expand-lg sticky-top navbar-sticky navbar-light navbar-custom"
+    >
       <div class="container">
         <a class="navbar-brand logo-link" href="#">
           <img src="images/logo.svg" alt="Logo Studio Foto Adda" width="50" />
@@ -263,9 +265,302 @@
       </div>
     </section>
 
+    <!-- Call to action -->
+    <section class="py-6 text-center call-to-action-services">
+      <div class="container">
+        <h2 class="mb-3">
+          Transformăm clipele speciale în amintiri de neuitat
+        </h2>
+        <p class="mb-4 text-dark">
+          Fie că este vorba despre o nuntă, un botez sau un alt eveniment
+          important, suntem aici să surprindem emoția fiecărui moment. Hai să
+          discutăm!
+        </p>
+
+        <div
+          class="d-flex flex-column flex-md-row justify-content-center align-items-center mb-4 gap-3"
+        >
+          <button
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#studio-foto-modal"
+          >
+            <i class="fas fa-envelope me-2"></i>Contactați-ne
+          </button>
+
+          <a href="portfolio.html" class="btn btn-outline-secondary">
+            <i class="fas fa-images me-2"></i>Vezi portofoliul
+          </a>
+        </div>
+
+        <div class="mt-3">
+          <a
+            href="https://www.facebook.com/profile.php?id=100063818465707"
+            target="_blank"
+            class="me-3 text-dark text-decoration-none"
+          >
+            <i class="fab fa-facebook fa-3x"></i>
+          </a>
+          <a
+            href="https://www.instagram.com/studiofotoadda?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+            target="_blank"
+            class="me-3 text-dark text-decoration-none"
+          >
+            <i class="fab fa-instagram fa-3x"></i>
+          </a>
+          <a href="#" class="text-dark text-decoration-none">
+            <i class="fab fa-whatsapp fa-3x"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer bg-light py-6">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 my-3 d-flex flex-column align-items-start gap-3">
+            <div
+              class="d-flex justify-content-center align-items-center logo-footer"
+            >
+              <img
+                src="images/logo.svg"
+                alt="Logo Studio Foto Adda"
+                width="50"
+              />
+              <div class="d-flex flex-column">
+                <span class="logo-text"> Studio Foto Adda </span>
+                <small class="logo-subtext">Servicii Foto Profesionale</small>
+              </div>
+            </div>
+            <p class="p-logo-footer">
+              Oferim servicii foto profesionale pentru nunți, botezuri, ședințe
+              foto de familie și alte evenimente speciale din viața ta.
+            </p>
+          </div>
+          <div class="col-md-4 my-3">
+            <h6>Linkuri utile</h6>
+            <ul class="list-unstyled">
+              <li>
+                <i class="fa-solid fa-cookie-bite me-2"></i>
+                Info:
+                <a href="#">Politica de cookies</a>
+              </li>
+              <li>
+                <i class="fa-solid fa-envelope me-2"></i> Adresă de email:
+                <a href="mailto:fotoadda@yahoo.com">fotoadda@yahoo.com</a>
+              </li>
+              <li>
+                <i class="fa-solid fa-compass me-2"></i>
+                Navigare: <a href="index.html">Acasă</a>,
+                <a href="services.html">Servicii</a>,
+                <a href="portfolio.html">Portofoliu</a>,
+                <a href="contact.html">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4 my-3">
+            <h6>Rețele de socializare</h6>
+            <div class="mb-4">
+              <a
+                href="https://www.facebook.com/profile.php?id=100063818465707"
+                target="_blank"
+                class="me-3 text-decoration-none"
+              >
+                <i class="fab fa-facebook fa-3x"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/studiofotoadda?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                target="_blank"
+                class="me-3 text-decoration-none"
+              >
+                <i class="fab fa-instagram fa-3x"></i>
+              </a>
+              <a href="#" class="me-3 text-decoration-none">
+                <i class="fab fa-whatsapp fa-3x"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Contact Form Modal -->
+    <div
+      class="modal fade"
+      id="studio-foto-modal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Studio Foto Adda</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <h3 class="text-center">Solicită o ofertă personalizată</h3>
+            <form
+              id="contactForm"
+              method="POST"
+              action="/api/send-email"
+              class="p-4"
+            >
+              <div class="mb-3">
+                <label for="name" class="form-label">Nume complet</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  name="name"
+                  placeholder="Ex: Andrei Popescu"
+                />
+                <div class="mt-1 validation-error display-none">
+                  Câmpul „Nume complet” este obligatoriu!
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="email" class="form-label">Adresă de email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  name="email"
+                  placeholder="Ex: andrei@email.com"
+                />
+              </div>
+
+              <div class="mb-3">
+                <label for="phone" class="form-label">Număr de telefon</label>
+                <input
+                  type="tel"
+                  class="form-control"
+                  id="phone"
+                  name="phone"
+                  placeholder="Ex: 07xx xxx xxx"
+                />
+                <div class="mt-1 validation-error display-none">
+                  Câmpul „Număr de telefon” este obligatoriu!
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="date" class="form-label"
+                  >Data estimativă a evenimentului / ședinței foto</label
+                >
+                <input type="date" name="date" class="form-control" id="date" />
+              </div>
+
+              <div class="mb-3">
+                <label for="location" class="form-label"
+                  >Locația evenimentului (dacă este relevant)</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  name="location"
+                  id="location"
+                  placeholder="Ex: Restaurant Royal Galați"
+                />
+              </div>
+
+              <div class="mb-3">
+                <label for="service" class="form-label"
+                  >Ce tip de servicii vă interesează?</label
+                >
+                <select name="service" class="form-select" id="service">
+                  <option selected disabled value="">Alegeți o opțiune</option>
+                  <option>Fotografii de nuntă</option>
+                  <option>Fotografii de botez</option>
+                  <option>Eveniment privat (majorat, aniversare etc.)</option>
+                  <option>Sesiune foto în studio</option>
+                  <option>Alt tip de eveniment</option>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label for="referral" class="form-label"
+                  >Cum ați aflat de noi?</label
+                >
+                <select class="form-select" id="referral">
+                  <option selected disabled value="">Alegeți o opțiune</option>
+                  <option>Recomandare de la prieteni/familie</option>
+                  <option>Facebook</option>
+                  <option>Instagram</option>
+                  <option>Google</option>
+                  <option>Am văzut site-ul dvs.</option>
+                  <option>Altă sursă</option>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label for="message" class="form-label">Mesaj (opțional)</label>
+                <textarea
+                  class="form-control"
+                  id="message"
+                  rows="4"
+                  name="message"
+                  placeholder="Spuneți-ne mai multe despre evenimentul dvs."
+                ></textarea>
+              </div>
+              <div class="d-flex gap-3">
+                <button
+                  type="submit"
+                  class="btn btn-primary d-flex align-items-center send-btn-custom flex-1"
+                  id="submitButton"
+                >
+                  <span class="button-text">Trimite cererea</span>
+                  <div
+                    class="spinner-border spinner-border-sm ms-2 d-none"
+                    role="status"
+                    id="loadingSpinner"
+                    aria-hidden="true"
+                  ></div>
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-secondary close-btn-custom flex-1"
+                  data-bs-dismiss="modal"
+                >
+                  Anulează
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <button id="to-top" class="to-top-btn">
-      <img src="images/up-arrow.png" alt="" />
+      <i class="fa-solid fa-arrow-up text-white"></i>
     </button>
+
+    <!-- Side buttons -->
+    <div
+      class="d-flex justify-content-center align-items-center flex-column side-buttons gap-2"
+    >
+      <a
+        href="https://wa.me/400750419349"
+        target="_blank"
+        class="side-buttons-whatsapp text-decoration-none"
+      >
+        <i class="fab fa-whatsapp fa-2x text-white"></i>
+      </a>
+
+      <a
+        class="side-buttons-form text-decoration-none"
+        data-bs-toggle="modal"
+        data-bs-target="#studio-foto-modal"
+      >
+        <i class="fas fa-envelope fa-2x text-white"></i>
+      </a>
+    </div>
 
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
