@@ -596,16 +596,6 @@
                   ></textarea>
                 </div>
                 <div class="d-flex gap-3">
-                  <div
-                    class="cf-turnstile"
-                    data-sitekey="0x4AAAAAABSVaiKB0CvIhrgw"
-                    data-callback="setTurnstileResponseAdda"
-                  ></div>
-                  <input
-                    type="hidden"
-                    name="cf-turnstile-response-adda"
-                    id="cf-turnstile-response-adda"
-                  />
                   <button
                     type="submit"
                     class="btn btn-primary d-flex align-items-center justify-content-center send-btn-custom flex-1"
@@ -834,27 +824,42 @@
                   placeholder="Spuneți-ne mai multe despre evenimentul dvs."
                 ></textarea>
               </div>
-              <div class="d-flex gap-3">
-                <button
-                  type="submit"
-                  class="btn btn-primary d-flex align-items-center send-btn-custom flex-1"
-                  id="submitButton"
-                >
-                  <span class="button-text">Trimite cererea</span>
+              <div class="d-flex flex-column gap-3">
+                <div class="d-flex justify-content-center">
                   <div
-                    class="spinner-border spinner-border-sm ms-2 d-none"
-                    role="status"
-                    id="loadingSpinner"
-                    aria-hidden="true"
+                    class="cf-turnstile"
+                    data-sitekey="0x4AAAAAABSVaiKB0CvIhrgw"
+                    data-callback="setTurnstileResponseAdda"
                   ></div>
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-secondary close-btn-custom flex-1"
-                  data-bs-dismiss="modal"
-                >
-                  Anulează
-                </button>
+                  <input
+                    type="hidden"
+                    name="cf-turnstile-response-adda"
+                    id="cf-turnstile-response-adda"
+                  />
+                </div>
+
+                <div class="d-flex gap-3">
+                  <button
+                    type="submit"
+                    class="btn btn-primary d-flex align-items-center send-btn-custom flex-1"
+                    id="submitButton"
+                  >
+                    <span class="button-text">Trimite cererea</span>
+                    <div
+                      class="spinner-border spinner-border-sm ms-2 d-none"
+                      role="status"
+                      id="loadingSpinner"
+                      aria-hidden="true"
+                    ></div>
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-secondary close-btn-custom flex-1"
+                    data-bs-dismiss="modal"
+                  >
+                    Anulează
+                  </button>
+                </div>
               </div>
             </form>
           </div>
