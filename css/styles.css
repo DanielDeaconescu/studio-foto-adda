@@ -236,6 +236,10 @@
   display: block;
 }
 
+.category-button-flex {
+  flex: 1;
+}
+
 .video-play-button {
   position: absolute;
   z-index: 10;
