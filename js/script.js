@@ -85,6 +85,7 @@ contactForms.forEach((form) => {
     const validationErrors = form.querySelectorAll(".validation-error");
     const fullName = form.querySelector("#name");
     const phone = form.querySelector("#phone");
+    const turnstileResponse = form.querySelector("#cf-turnstile-response-adda");
 
     // Clear old validation errors
     validationErrors.forEach((el) => el.classList.add("display-none"));
@@ -99,6 +100,12 @@ contactForms.forEach((form) => {
     if (phone.value === "") {
       validationErrors[1].classList.remove("display-none");
       isValid = false;
+    }
+
+    // Check if Turnstile token exists
+    if (!turnstileResponse.value) {
+      alert("Vă rugăm să completați verificarea Turnstile.");
+      return;
     }
 
     if (!isValid) return;

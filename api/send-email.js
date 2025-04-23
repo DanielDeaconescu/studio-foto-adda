@@ -34,12 +34,46 @@ export default async function handler(req, res) {
     // Parse form data manually (since Vercel doesn't parse it automatically)
     const parsedData = await parseFormData(req);
 
-    const { name, email, date, location, service, message, phone } = parsedData;
+    const {
+      name,
+      email,
+      date,
+      location,
+      service,
+      message,
+      phone,
+      "cf-turnstile-response-adda": turnstileToken,
+    } = parsedData;
 
-    if (!name || !phone) {
+    if (!name || !phone || !turnstileToken) {
       return res
         .status(400)
         .json({ message: "Numele și numărul de telefon sunt obligatorii!" });
+    }
+
+    // Verify Turnstile token exists
+    if (!turnstileToken) {
+      return res
+        .status(403)
+        .json({ message: "Verificarea Turnstile lipsește!" });
+    }
+
+    // Verify Turnstile token with Cloudflare
+    const verification = await axios.post(
+      "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+      new URLSearchParams({
+        secret: process.env.TURNSTILE_SECRET,
+        response: turnstileToken,
+      }).toString(),
+      { headers: { "Content-Type": "application/x-www-form-urlencoded" } }
+    );
+
+    if (!verification.data.success) {
+      console.error("Turnstile verification failed:", verification.data);
+      return res.status(403).json({
+        message:
+          "Verificarea de securitate a eșuat. Vă rugăm reîncărcați pagina și încercați din nou.",
+      });
     }
 
     // Create transporter for nodemailer

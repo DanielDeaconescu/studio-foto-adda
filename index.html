@@ -11,6 +11,13 @@
       rel="stylesheet"
     />
 
+    <!-- Turnstile script -->
+    <script
+      src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+      async
+      defer
+    ></script>
+
     <!-- Pacifico Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -589,6 +596,16 @@
                   ></textarea>
                 </div>
                 <div class="d-flex gap-3">
+                  <div
+                    class="cf-turnstile"
+                    data-sitekey="0x4AAAAAABSVaiKB0CvIhrgw"
+                    data-callback="setTurnstileResponseAdda"
+                  ></div>
+                  <input
+                    type="hidden"
+                    name="cf-turnstile-response-adda"
+                    id="cf-turnstile-response-adda"
+                  />
                   <button
                     type="submit"
                     class="btn btn-primary d-flex align-items-center justify-content-center send-btn-custom flex-1"
@@ -894,5 +911,11 @@
 
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
+
+    <script>
+      function setTurnstileResponseAdda(token) {
+        document.getElementById("cf-turnstile-response-adda").value = token;
+      }
+    </script>
   </body>
 </html>
