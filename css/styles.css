@@ -204,6 +204,38 @@
   width: 100px;
 }
 
+.portrait {
+  max-height: 610px;
+}
+
+.img-wrapper {
+  height: 610px;
+  overflow: hidden;
+  margin-bottom: 15px;
+  border-radius: 8px;
+}
+
+.img-wrapper img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.img-wrapper-landscape {
+  height: 270px;
+  overflow: hidden;
+  margin-bottom: 15px;
+  border-radius: 8px;
+}
+
+.img-wrapper-landscape img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .video-play-button {
   position: absolute;
   z-index: 10;

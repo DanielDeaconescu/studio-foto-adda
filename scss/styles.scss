@@ -231,6 +231,41 @@
 
 // Styling the thank-you page end
 
+// Styling the Portfolio start
+.portrait {
+  max-height: 610px;
+}
+
+.img-wrapper {
+  height: 610px;
+  overflow: hidden;
+  margin-bottom: 15px;
+  border-radius: 8px;
+}
+
+.img-wrapper img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.img-wrapper-landscape {
+  height: 270px;
+  overflow: hidden;
+  margin-bottom: 15px;
+  border-radius: 8px;
+}
+
+.img-wrapper-landscape img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+// Styling the Portfolio end
+
 // Video Play Button
 
 .video-play-button {
