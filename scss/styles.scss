@@ -6,6 +6,7 @@
   --instagram-logo: #fd1d1d;
   --whatsapp-logo: #075e54;
   --green-adda-logo: hsl(127, 42%, 47%);
+  --green-adda-logo-light: hsla(127, 42%, 47%, 0.4);
   --orange-adda-logo: hsl(27, 95%, 59%);
   --yeallow-adda-logo: hsl(46, 100%, 60%);
 }
@@ -168,20 +169,13 @@
 
 // Styling Call To Action end
 
-// Styling contact section start
-#contact .photographer-decoration-3 {
-  top: 10px;
-  left: -200px;
-  width: 500px;
-  opacity: 0.7;
-}
+// Styling the carousel start
 
-.contact-image {
-  border-radius: 2rem;
-  max-height: 750px;
-}
+// Styling the carousel end
 
-// Styling contact section end
+.testimonials {
+  background-color: var(--green-adda-logo-light);
+}
 
 // Styling the footer start
 
