@@ -25,6 +25,12 @@
   font-size: 2rem;
 }
 
+.logo-subtext {
+  margin-top: -10px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
 // starter CSS start
 .xl-text {
   font-size: 75px;
@@ -87,12 +93,6 @@
 
 .nav-link:hover {
   color: white;
-}
-
-.logo-subtext {
-  margin-top: -10px;
-  text-transform: uppercase;
-  font-size: 0.9rem;
 }
 
 // Styling the Header start
