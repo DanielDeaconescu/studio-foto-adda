@@ -105,7 +105,7 @@
       <div class="container position-relative z-3">
         <div class="row">
           <div class="col-lg-6">
-            <div class="mt-6">
+            <div class="mt-6 d-flex flex-column">
               <h1 class="md-text header-h1">
                 Studio Foto pentru nunți, botezuri și evenimente speciale Galați
               </h1>
@@ -227,16 +227,16 @@
             </div>
           </div>
           <div class="col-lg-6">
-            <div class="mt-4">
-              <h2 class="mb-4">Valorile noastre</h2>
-              <p>
+            <div class="mt-4 d-flex flex-column justify-content-center">
+              <h2 class="mb-4 our-values-title">Valorile noastre</h2>
+              <p class="our-values-paragraph">
                 La Studio Foto Adda, credem că valorile noastre sunt fundamentul
                 unui serviciu de calitate și al unei relații de încredere cu
                 fiecare client. Aceste valori ne definesc și ne ajută să oferim
                 o experiență memorabilă fiecărui eveniment pe care îl
                 surprindem.
               </p>
-              <ul class="list-unstyled">
+              <ul class="list-unstyled our-values-list">
                 <li class="d-flex mb-3">
                   <i class="fas fa-camera text-primary fa-2x mx-4"></i>
                   <p class="our-values-paragraph">
@@ -323,7 +323,7 @@
 
     <!-- Call to action -->
     <section class="get-quote py-6 text-center text-dark">
-      <div class="container">
+      <div class="container container-cta">
         <h2 class="mb-3 text-dark">
           Pregătiți să imortalizăm momentele importante din viața voastră?
         </h2>
@@ -333,7 +333,7 @@
         </p>
 
         <button
-          class="btn btn-primary me-2"
+          class="btn btn-primary me-2 contact-btn-cta"
           data-bs-toggle="modal"
           data-bs-target="#studio-foto-modal"
         >
@@ -390,11 +390,13 @@
                   class="rounded-circle"
                   width="120"
                 />
-                <p class="w-50 my-4 fst-italic fs-4 mb-4">
+                <p class="w-50 my-4 fst-italic fs-4 mb-4 testimonial-p">
                   “Oameni deosebiți, activitate de calitate! Mulțumesc pentru
                   serviciile dumneavoastră! 🤗❤️”
                 </p>
-                <div class="fw-bold fs-5 mt-4">Silvia Mere</div>
+                <div class="fw-bold fs-5 mt-4 testimonial-name">
+                  Silvia Mere
+                </div>
                 <div>Facebook</div>
               </div>
             </div>
@@ -410,11 +412,13 @@
                   class="rounded-circle"
                   width="120"
                 />
-                <p class="w-50 my-4 fst-italic fs-4 mb-4">
+                <p class="w-50 my-4 fst-italic fs-4 mb-4 testimonial-p">
                   “Sunt extraordinari!!!Recomand cu drag aceasta echipa
                   tanara,frumoasa si profesionista!!!!👏👏👏”
                 </p>
-                <div class="fw-bold fs-5 mt-4">Ana Dumanovschi</div>
+                <div class="fw-bold fs-5 mt-4 testimonial-name">
+                  Ana Dumanovschi
+                </div>
                 <div>Facebook</div>
               </div>
             </div>
@@ -429,12 +433,14 @@
                   class="rounded-circle"
                   width="120"
                 />
-                <p class="w-50 my-4 fst-italic fs-4 mb-4">
+                <p class="w-50 my-4 fst-italic fs-4 mb-4 testimonial-p">
                   “Recomand pentru disponibilitate în a oferi servicii, m au
                   aștept 10 min după program, calitate poze foarte bună și
                   prețuri accesibile.”
                 </p>
-                <div class="fw-bold fs-5 mt-4">Teodorascu Dorina</div>
+                <div class="fw-bold fs-5 mt-4 testimonial-name">
+                  Teodorascu Dorina
+                </div>
                 <div>Google</div>
               </div>
             </div>
@@ -459,7 +465,7 @@
       </div>
     </section>
 
-    <footer class="footer bg-light py-6">
+    <footer class="footer footer-custom bg-light py-6">
       <div class="container">
         <div class="row">
           <div class="col-md-4 my-3 d-flex flex-column align-items-start gap-3">
