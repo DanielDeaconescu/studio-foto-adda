@@ -1,6 +1,6 @@
 :root {
   --red-1: hsl(4, 85%, 59%);
-  --blue-1: hsl(217, 45%, 48%);
+  --blue-1: hsl(217, 45%, 28%);
   --purple-1: hsl(338, 52%, 48%);
   --facebook-logo: #1877f2;
   --instagram-logo: #fd1d1d;
@@ -439,6 +439,11 @@
 .call-to-action-services {
   // background-color: var(--yeallow-adda-logo);
   background-color: #fdf5e6;
+  padding-top: 3rem !important;
+}
+
+.cta-buttons-container {
+  align-items: unset !important;
 }
 
 // Styling the services page end
