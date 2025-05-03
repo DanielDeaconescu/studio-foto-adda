@@ -570,6 +570,7 @@
     padding-bottom: 1rem !important;
   }
 
+  // services page starts
   .services-p {
     font-size: 1.2rem;
   }
@@ -577,7 +578,9 @@
   .services-title {
     margin-bottom: 0.5rem !important;
   }
+  // services page ends
 
+  // portfolio page starts
   .portfolio-title {
     font-size: 1.6rem;
   }
@@ -596,6 +599,15 @@
     display: flex;
     gap: 0.5rem;
     flex-wrap: wrap;
+  }
+
+  .portfolio-cta-custom {
+    padding: 3rem !important;
+  }
+  // portfolio page ends
+
+  #contactForm {
+    padding: 0 !important;
   }
 }
 
