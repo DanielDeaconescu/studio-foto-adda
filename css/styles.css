@@ -240,6 +240,18 @@
   flex: 1;
 }
 
+.ring-icon-custom {
+  display: none;
+}
+
+.baptism-icon-custom {
+  display: none;
+}
+
+.family-icon-custom {
+  display: none;
+}
+
 .video-play-button {
   position: absolute;
   z-index: 10;
@@ -523,6 +535,24 @@
   }
   .portfolio-cta-custom {
     padding: 3rem !important;
+  }
+  .ring-icon-custom {
+    display: block;
+  }
+  .baptism-icon-custom {
+    display: block;
+  }
+  .family-icon-custom {
+    display: block;
+  }
+  .text-wedding {
+    display: none;
+  }
+  .text-baptism {
+    display: none;
+  }
+  .text-family {
+    display: none;
   }
   #contactForm {
     padding: 0 !important;

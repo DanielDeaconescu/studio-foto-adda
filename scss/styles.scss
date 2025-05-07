@@ -268,6 +268,18 @@
   flex: 1;
 }
 
+.ring-icon-custom {
+  display: none;
+}
+
+.baptism-icon-custom {
+  display: none;
+}
+
+.family-icon-custom {
+  display: none;
+}
+
 // Styling the Portfolio end
 
 // Video Play Button
@@ -614,6 +626,31 @@
   .portfolio-cta-custom {
     padding: 3rem !important;
   }
+
+  .ring-icon-custom {
+    display: block;
+  }
+
+  .baptism-icon-custom {
+    display: block;
+  }
+
+  .family-icon-custom {
+    display: block;
+  }
+
+  .text-wedding {
+    display: none;
+  }
+
+  .text-baptism {
+    display: none;
+  }
+
+  .text-family {
+    display: none;
+  }
+
   // portfolio page ends
 
   #contactForm {
