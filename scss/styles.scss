@@ -624,7 +624,7 @@
   .category-buttons-container-custom {
     display: flex;
     gap: 0.5rem;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
   }
 
   .portfolio-cta-custom {
