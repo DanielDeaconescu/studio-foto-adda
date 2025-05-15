@@ -252,6 +252,10 @@
   display: none;
 }
 
+.studio-icon-custom {
+  display: none;
+}
+
 .video-play-button {
   position: absolute;
   z-index: 10;
@@ -553,6 +557,12 @@
   }
   .text-family {
     display: none;
+  }
+  .text-studio {
+    display: none;
+  }
+  .studio-icon-custom {
+    display: block;
   }
   #contactForm {
     padding: 0 !important;

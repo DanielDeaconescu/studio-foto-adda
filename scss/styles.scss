@@ -280,6 +280,10 @@
   display: none;
 }
 
+.studio-icon-custom {
+  display: none;
+}
+
 // Styling the Portfolio end
 
 // Video Play Button
@@ -649,6 +653,14 @@
 
   .text-family {
     display: none;
+  }
+
+  .text-studio {
+    display: none;
+  }
+
+  .studio-icon-custom {
+    display: block;
   }
 
   // portfolio page ends
