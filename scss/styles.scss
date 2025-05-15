@@ -284,6 +284,10 @@
   display: none;
 }
 
+.school-icon-custom {
+  display: none;
+}
+
 // Styling the Portfolio end
 
 // Video Play Button
@@ -477,6 +481,10 @@
 // Media Queries
 
 @media (max-width: 576px) {
+  .navbar-custom {
+    height: unset;
+  }
+
   .logo-link img {
     width: 35px;
   }
@@ -663,10 +671,26 @@
     display: block;
   }
 
+  .school-icon-custom {
+    display: block;
+  }
+
   // portfolio page ends
 
   #contactForm {
     padding: 0 !important;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+  .navbar-custom {
+    height: unset;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  .navbar-custom {
+    height: unset;
   }
 }
 
