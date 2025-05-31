@@ -157,11 +157,18 @@ export default async function handler(req, res) {
       },
     });
 
+    const currentDate = new Date();
+    const bucharestTime = currentDate.toLocaleString("ro-RO", {
+      timeZone: "Europe/Bucharest",
+      dateStyle: "short",
+      timeStyle: "medium",
+    });
+
     // Email options
     const mailOptions = {
       from: process.env.SMTP_USER, // Sender's email
       to: process.env.RECEIVER_EMAIL, // Recipient's email
-      subject: `Cerere de la ${name}`, // Subject
+      subject: `Cerere de la ${name} - ${bucharestTime}`, // Subject
       html: `
         <h3>Detalii contact:</h3>
         <p><strong>Nume:</strong> ${name}</p>
