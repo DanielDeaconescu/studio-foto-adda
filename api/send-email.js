@@ -1,6 +1,12 @@
 import nodemailer from "nodemailer";
 import axios from "axios";
 import { IncomingMessage } from "http"; // For type reference in JSDoc
+import { MongoClient } from "mongodb";
+
+// MongoDB connection URI
+const mongoUri = process.env.MONGODB_URI;
+const dbName = "StudioFotoAddaFormSubmissions";
+const collectionName = "studioFotoAdda";
 
 /**
  * Parses URL-encoded form data from a raw request stream.
@@ -25,12 +31,74 @@ function parseFormData(req) {
   });
 }
 
+async function checkRateLimit(ip) {
+  const client = new MongoClient(mongoUri);
+
+  try {
+    await client.connect();
+    const db = client.db(dbName);
+    const collection = db.collection(collectionName);
+
+    // Calculate 24 hours ago
+    const twentyFourHoursAgo = new Date(Date.now() - 24 * 60 * 60 * 1000);
+
+    // Count submissions from this IP in the last 24 hours
+    const count = await collection.countDocuments({
+      ip,
+      timestamp: { $gte: twentyFourHoursAgo },
+    });
+
+    return {
+      isLimited: count >= 2,
+      count,
+    };
+  } finally {
+    await client.close();
+  }
+}
+
+/**
+ * Records a submission in the database
+ * @param {string} ip - The IP address to record
+ * @param {Object} formData - The form data submitted
+ */
+async function recordSubmission(ip, formData) {
+  const client = new MongoClient(mongoUri);
+
+  try {
+    await client.connect();
+    const db = client.db(dbName);
+    const collection = db.collection(collectionName);
+
+    await collection.insertOne({
+      ip,
+      timestamp: new Date(),
+      formData,
+    });
+  } finally {
+    await client.close();
+  }
+}
+
 export default async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({ message: "Method Not Allowed" });
   }
 
   try {
+    // Get client IP address
+    const ip = req.headers["x-forwarded-for"] || req.connection.remoteAddress;
+    // Handle case where x-forwarded-for may contain multiple IPs
+    const clientIp = ip ? ip.split(",")[0].trim() : "unknown";
+
+    // Check rate limit
+    const { isLimited, count } = await checkRateLimit(clientIp);
+    if (isLimited) {
+      return res.status(429).json({
+        message: `Ați depășit limita de 2 trimiteri pe zi. Vă rugăm încercați din nou mâine. (${count}/2 utilizate)`,
+      });
+    }
+
     // Parse form data manually (since Vercel doesn't parse it automatically)
     const parsedData = await parseFormData(req);
 
@@ -105,6 +173,9 @@ export default async function handler(req, res) {
 
     // Send email
     await transporter.sendMail(mailOptions);
+
+    // Record the successful submission
+    await recordSubmission(clientIp, parsedData);
 
     // Return success message to the client
     return res
