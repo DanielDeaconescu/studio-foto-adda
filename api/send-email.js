@@ -95,6 +95,8 @@ export default async function handler(req, res) {
     const { isLimited, count } = await checkRateLimit(clientIp);
     if (isLimited) {
       return res.status(429).json({
+        success: false,
+        redirectTo: "../too-many-requests.html", // Relative path to your HTML file
         message: `Ați depășit limita de 2 trimiteri pe zi. Vă rugăm încercați din nou mâine. (${count}/2 utilizate)`,
       });
     }

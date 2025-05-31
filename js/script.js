@@ -72,7 +72,6 @@ if (videoModal !== null) {
 }
 
 // When the modal is closed, reset the form + Form Validation
-
 const contactForms = document.querySelectorAll("#contactForm");
 
 contactForms.forEach((form) => {
@@ -126,35 +125,44 @@ contactForms.forEach((form) => {
         body: encodedData.toString(),
       });
 
-      if (!response.ok) throw new Error("Failed to send email");
-
       const result = await response.json();
 
-      if (result.success && result.redirectTo) {
-        form.reset();
-        submitButton.disabled = false;
-        loadingSpinner.classList.add("d-none");
-        buttonText.textContent = "Trimite cererea";
+      // Reset form state regardless of response
+      form.reset();
+      submitButton.disabled = false;
+      loadingSpinner.classList.add("d-none");
+      buttonText.textContent = "Trimite cererea";
 
+      // Handle redirects (both success and rate limit cases)
+      if (result.redirectTo) {
         const modal = form.closest(".modal");
+
         if (modal) {
           const modalInstance =
             bootstrap.Modal.getInstance(modal) || new bootstrap.Modal(modal);
           modalInstance.hide();
-
-          setTimeout(() => {
-            window.location.href = result.redirectTo;
-          }, 1000);
-        } else {
-          // if it's not in a modal, redirect immediately
-          window.location.href = result.redirectTo;
         }
+
+        // Short delay before redirect to allow modal to close
+        setTimeout(
+          () => {
+            window.location.href = result.redirectTo;
+          },
+          modal ? 500 : 0
+        ); // Shorter delay if no modal
+      }
+      // Handle error cases without redirect
+      else if (!response.ok) {
+        const errorMessage =
+          result.message || "A apărut o eroare la trimiterea formularului";
+        alert(errorMessage);
       }
     } catch (err) {
       console.error("Error submitting form: ", err);
       submitButton.disabled = false;
       loadingSpinner.classList.add("d-none");
       buttonText.textContent = "Trimite cererea";
+      alert("A apărut o eroare de conexiune. Vă rugăm încercați din nou.");
     }
   });
 });
